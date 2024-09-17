@@ -9,6 +9,9 @@
  * Solving programming challenge #4 Star Pattern at the end of Chapter
  * 2, "Programming challenges" with the below added requirements
  */
+
+import javax.swing.JOptionPane; // required for the JOptionPane class
+
 public class StarPattern {
     /**
      * 
@@ -29,10 +32,14 @@ public class StarPattern {
         pattern = constructStarsPattern();
 
         // problem 5:
-        // reference variable
+        // title is used as a reference variable
         String title = "Stars_Pattern";
-        dispayStarsPattern(title, pattern);
+
+        displayStarsPattern(title, pattern);
+        displayStarsPatternInMessageBox(title, pattern);
         
+        System.exit(0); // required for the JOptionPane class
+
     } // end of main()
 
     // problem 1:
@@ -70,11 +77,58 @@ public class StarPattern {
      *                  // "Stars_Pattern"
      * @param pattern   // variable that displays the star pattern itself
      */
-    public static void dispayStarsPattern (String title, String pattern) {
+    public static void displayStarsPattern(String title, String pattern) {
+        // this code below prints the star pattern to the console
         // problem 5(a):
-        System.out.println("The number of characters in the pattern is " +
+        System.out.println("5a. The number of characters in the pattern is " +
                             pattern.length());
+        // problem 5(b):
+        System.out.printf("5b. The number of characters in the pattern is %s",
+                            pattern.length() +
+                            "\n");
         System.out.println(title + " " + pattern);
-    }
+        // problem 5(c):
+        System.out.println("5c. The stars' pattern is:" + 
+                           "\n" +
+                           pattern);
+        System.out.printf("5d. The stars' pattern is: " +
+                          "\n" +
+                          "%s",
+                          pattern);
+        
+    } // end of diaplayStarsPattern(String title, String pattern)
+
+    public static void displayStarsPatternInMessageBox(String title, String pattern) {
+        /*
+         * however, this code below prints the star pattern in
+         * the popup dialogue windows!
+         */
+        // problem 5(e):
+        /*
+         * if you do not include "JOptionPane.INFORMATION_MESSAGE" in the
+         * showMessageDialog method parameters for 5e to 5h, there will
+         * be an error thrown describing the method is not applicable for
+         * the arguments (null, String, String) because there needs to be
+         * a parameter that returns a string
+         */
+        JOptionPane.showMessageDialog(null,
+                                      pattern, "5e. " + title,
+                                      JOptionPane.INFORMATION_MESSAGE);
+        // problem 5(f):
+        JOptionPane.showMessageDialog(null,
+                                      "The number of characters in the pattern is " +
+                                      pattern.length(),
+                                      "5f. " + title,
+                                      JOptionPane.INFORMATION_MESSAGE);
+        // problem 5(g):
+        JOptionPane.showMessageDialog(null,
+                                      pattern, "5g. " + title,
+                                      JOptionPane.INFORMATION_MESSAGE);
+        // problem 5(h):
+        JOptionPane.showMessageDialog(null, "The pattern is:" + pattern,
+                                     "5g. " + title,
+                                     JOptionPane.INFORMATION_MESSAGE);
+
+    } // end of displayStarsPatternInMessageBox(String title, String pattern)
 
 } // end of StarPattern
