@@ -44,11 +44,52 @@ public class StarPattern {
          * in the star pattern
          */
         int asterisks;
-
-        // // problem 8:
-        // System.out.println("The number of * symbols in the lines of the " +
-        //                     "pattern are");
         
+        // problem 8:
+        /*
+         * this variable is meant to display the number of colummns
+         * in the star pattern
+         */
+        int numOfColumns = 6;
+        // asterisks' formula
+        asterisks = (int) Math.pow(numOfColumns, 2);
+
+        // problem 9:
+        /*
+         * uses the console output to display the amount of stars in
+         * the individual lines of the pattern, along with displaying
+         * the total number of stars
+         */
+        String output1 = "\n\nThe number of * symbols in the pattern are: " +
+                         "\n" + 1 + ", " + 2 + ", " + 3 + ", " + 4 + ", "
+                         + 5 + ", " + 6 + ", " + 5 + ", " + 4 + ", " + 3 +
+                         ", " + 2 + ", " + 1;
+        String output2 = "The total number of * symbols in the pattern is: " +
+                         asterisks;
+        System.out.println(output1 + "\n" + output2);
+
+        /*
+         * uses the JOptionPane output to display the amount of stars
+         * in the individual lines of the pattern, along with displaying
+         * the total number of stars
+         */
+        JOptionPane.showMessageDialog(null, output1 + "\n" + output2);
+
+        // problem 11:
+        JOptionPane.showMessageDialog(null, "Check your answer?");
+        /*
+         * prompts the user to enter the number of columns for any star pattern
+         */
+        int columnsNum = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of " +
+                                                                      "columns for a star " +
+                                                                      "pattern:"));
+        /*
+         * displays the number of columns and the computed number of asterisks
+         * in the same line
+         */
+        JOptionPane.showMessageDialog(null, "There are " + columnsNum +
+        " columns in a star pattern that has " + (int) Math.pow(columnsNum, 2) + " stars.");
+
         System.exit(0); // required for the JOptionPane class
 
     } // end of main()
@@ -97,7 +138,6 @@ public class StarPattern {
         System.out.printf("5b. The number of characters in the pattern is %s",
                             pattern.length() +
                             "\n");
-        System.out.println(title + " " + pattern);
         // problem 5(c):
         System.out.println("5c. The stars' pattern is:" + 
                            "\n" +
@@ -125,8 +165,8 @@ public class StarPattern {
          * if you do not include "JOptionPane.INFORMATION_MESSAGE" in the
          * showMessageDialog method parameters for 5e to 5h, there will
          * be an error thrown describing the method is not applicable for
-         * the arguments (null, String, String) because there needs to be
-         * a parameter that returns a string
+         * the arguments (null, String, String). this only happens if you
+         * include a title parameter
          */
         JOptionPane.showMessageDialog(null,
                                       pattern, "5e. " + title,
