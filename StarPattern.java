@@ -37,6 +37,17 @@ public class StarPattern {
 
         displayStarsPattern(title, pattern);
         displayStarsPatternInMessageBox(title, pattern);
+
+        // problem 7:
+        /*
+         * this variable is meant to display the number of asterisks
+         * in the star pattern
+         */
+        int asterisks;
+
+        // // problem 8:
+        // System.out.println("The number of * symbols in the lines of the " +
+        //                     "pattern are");
         
         System.exit(0); // required for the JOptionPane class
 
@@ -98,6 +109,12 @@ public class StarPattern {
         
     } // end of diaplayStarsPattern(String title, String pattern)
 
+    /**
+     * 
+     * @param title     // reference variable which would be the title
+     *                  // "Stars_Pattern"
+     * @param pattern   // variable that displays the star pattern itself
+     */
     public static void displayStarsPatternInMessageBox(String title, String pattern) {
         /*
          * however, this code below prints the star pattern in
